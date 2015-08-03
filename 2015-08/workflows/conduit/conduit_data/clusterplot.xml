@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<module xmlns="http://www.openapi.org/2014/" language="R">
+  <description/>
+  <input name="data_frame">
+    <internal symbol="data_frame"/>
+    <format formatType="text">R data frame</format>
+  </input>
+  <input name="cluster">
+    <internal symbol="cluster"/>
+    <format formatType="text">R kmeans object</format>
+  </input>
+  <source>
+    <script><![CDATA[library(lattice)
+xyplot(data_frame$Number~data_frame$Age,
+       groups = cluster$cluster, xlab = "Age", ylab = "Number", 
+       main = "Scatterplot of kyphosis data")]]></script>
+  </source>
+  <output name="Rplots.pdf">
+    <file ref="Rplots.pdf"/>
+    <format formatType="text">PDF file</format>
+  </output>
+</module>
