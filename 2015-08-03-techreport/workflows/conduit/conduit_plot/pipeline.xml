@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<pipeline xmlns="http://www.openapi.org/2014/">
+  <description></description>
+  <component name="iris_csv" ref="iris_csv.xml" type="module"/>
+  <component name="readCSV" ref="readCSV.xml" type="module"/>
+  <component name="scattermatrix" ref="scattermatrix.xml" type="module"/>
+  <pipe>
+    <start component="iris_csv" output="iris_csv"/>
+    <end component="readCSV" input="data.csv"/>
+  </pipe>
+  <pipe>
+    <start component="readCSV" output="data_frame"/>
+    <end component="scattermatrix" input="data_frame"/>
+  </pipe>
+</pipeline>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<pipeline xmlns="http://www.openapi.org/2014/">
+  <description></description>
+  <component name="kyphosis_csv" ref="kyphosis_csv.xml" type="module"/>
+  <component name="readCSV" ref="readCSV.xml" type="module"/>
+  <component name="kmeans_cluster" ref="kmeans_cluster.xml" type="module"/>
+  <component name="clusterplot" ref="clusterplot.xml" type="module"/>
+  <pipe>
+    <start component="kyphosis_csv" output="kyphosis_csv"/>
+    <end component="readCSV" input="data.csv"/>
+  </pipe>
+  <pipe>
+    <start component="readCSV" output="data_frame"/>
+    <end component="kmeans_cluster" input="data_frame"/>
+  </pipe>
+  <pipe>
+    <start component="readCSV" output="data_frame"/>
+    <end component="clusterplot" input="data_frame"/>
+  </pipe>
+  <pipe>
+    <start component="kmeans_cluster" output="cluster"/>
+    <end component="clusterplot" input="cluster"/>
+  </pipe>
+</pipeline>

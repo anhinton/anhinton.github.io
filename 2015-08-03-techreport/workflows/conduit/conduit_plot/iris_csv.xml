@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<module xmlns="http://www.openapi.org/2014/" language="R">
+  <description>Hack module to provide CSV file to a pipeline. Development version of conduit could not handle these properly as at 2015-06-19. Source script is empty for similar reasons. 
+
+ Absolute file path to iris.csv will need to be altered from machine to machine</description>
+  <source>
+    <script><![CDATA[]]></script>
+  </source>
+  <output name="iris_csv">
+    <file ref="/home/ahin017/uoastorage/openapi/documentation/litreview/workflows/iris.csv"/>
+    <format formatType="text">CSV file</format>
+  </output>
+</module>

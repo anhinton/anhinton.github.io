@@ -1,0 +1,13 @@
+body { margin: auto; max-width: 800px; }
+code{ white-space: pre-wrap; }
+div.title {
+    text-align: center;
+}
+p.author { 
+    font-style: italic;
+    font-size: large;
+ }
+div.introduction { 
+    padding: 0.5em 2em 0.5em 2em; 
+    background-color: silver;
+}
